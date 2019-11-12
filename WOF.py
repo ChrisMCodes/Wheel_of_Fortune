@@ -10,18 +10,15 @@ class WOFPlayer:
         self.prizes = []
     def addMoney(self, amt):
         self.prizeMoney += amt
-        return self.prizeMoney
     def goBankrupt(self):
         self.prizeMoney = 0
-        return self.prizeMoney
     def addPrize(self, prize):
         self.prizes.append(prize)
-        return self.prizes
     def __str__(self):
         return '{} (${})'.format(self.name, self.prizeMoney)
 # Write the WOFHumanPlayer class definition (part B) here
 class WOFHumanPlayer(WOFPlayer):
-    def __init__(self, category, oscuredPhrase, guessed):
+    def __init__(self, category, obscuredPhrase, guessed):
         self.getMove = input('{} has ${}\n\n'.format(self.name, self.prizeMoney), 'Category: {}\n'.format(category), 'Phrase: {}\n'.format(obscuredPhrase), 'Guessed: {}\n\n'.format(guessed), 'Guess a letter, phrase, or type \'exit\' or \'pass\':') 
 # Write the WOFComputerPlayer class definition (part C) here
 class WOFComputerPlayer(WOFPlayer):
